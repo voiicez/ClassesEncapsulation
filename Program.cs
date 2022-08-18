@@ -9,13 +9,15 @@
                 Adi = "Behlül",
                 Soyadi = "Şahin",
                 ErkekMi = true,
-                KartNo = "1234 5678 9101 1213"
+                KartNo = "1234 5678 9101 1213",
+                DogumTarihi = new DateTime(1998,5,1)
 
 
             };
             Console.WriteLine("Adı: "+musteri.TamAdi+"\n"+"Cinsiyeti: "
                 +musteri.Cinsiyet+"\n"+"Kart No : "
-                +musteri.KartNo);
+                +musteri.KartNo+"\nDoğum Tarihi: "+musteri.DogumTarihi.ToShortDateString());
+            musteri.AlisverisYap("iPhone 13");
             
         }
     }
@@ -35,6 +37,7 @@
         //    }
         //        }
 
+        public DateTime DogumTarihi { get; set; }
 
         public string _kartNo;
         public string KartNo 
@@ -58,6 +61,11 @@
             {
                 return ErkekMi ? "Erkek" : "Kadın";
             }
+        }
+
+        public void AlisverisYap(string urun)
+        {
+            Console.WriteLine(TamAdi+" "+KartNo+" "+" ile "+urun+" aldı.");
         }
     }
 }
